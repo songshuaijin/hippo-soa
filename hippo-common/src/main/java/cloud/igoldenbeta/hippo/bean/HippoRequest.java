@@ -16,7 +16,6 @@ public class HippoRequest implements Serializable {
    */
   private static final long serialVersionUID = 1011251787575609560L;
   private String requestId;
-  private Integer requestType = 0; //0:内部rpc调用 1:apigate调用
   private String className;
   private String methodName;
   private Class<?>[] parameterTypes;
@@ -28,14 +27,6 @@ public class HippoRequest implements Serializable {
 
   public void setRequestId(String requestId) {
     this.requestId = requestId;
-  }
-
-  public Integer getRequestType() {
-    return requestType;
-  }
-
-  public void setRequestType(Integer requestType) {
-    this.requestType = requestType;
   }
 
   public String getClassName() {
@@ -72,13 +63,8 @@ public class HippoRequest implements Serializable {
 
   @Override
   public String toString() {
-    return "HippoRequest{" +
-            "requestId='" + requestId + '\'' +
-            ", requestType=" + requestType +
-            ", className='" + className + '\'' +
-            ", methodName='" + methodName + '\'' +
-            ", parameterTypes=" + Arrays.toString(parameterTypes) +
-            ", parameters=" + Arrays.toString(parameters) +
-            '}';
+    return "HippoRequest{" + "requestId='" + requestId + '\'' + ", className='" + className + '\''
+        + ", methodName='" + methodName + '\'' + ", parameterTypes="
+        + Arrays.toString(parameterTypes) + ", parameters=" + Arrays.toString(parameters) + '}';
   }
 }
